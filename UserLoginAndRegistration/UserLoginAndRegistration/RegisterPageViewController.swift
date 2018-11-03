@@ -36,7 +36,6 @@ class RegisterPageViewController: UIViewController {
         {
             //Display alert message
             displayMyAlertMessage(userMessage: "All fields are required");
-            
             return;
         }
         

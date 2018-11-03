@@ -22,8 +22,19 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
+        let userEmail = userEmailTextField.text;
+        let userPassword = userPasswordTextField.text;
+        
+
+        func editingChanged(_ textField: UITextField) {
+            if textField.text?.characters.count == 1 {
+                if textField.text?.characters.first == " " {
+                    textField.text = ""
+                    return
+                }
+            }
+   /* @IBAction func loginButtonTapped(_ sender: Any) {
         let userEmail = userEmailTextField.text;
         let userPassword = userPasswordTextField.text;
         
@@ -32,7 +43,18 @@ class LoginViewController: UIViewController {
         if(userEmailStored == userEmail){
             if(userPasswordStored == userPassword)
             {
-
+        func displayMyAlertMessage(userMessage:String)
+            {
+            var myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle:UIAlertControllerStyle.alert);
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.present(myAlert, animated: true, completion:nil);
+                    
+                    
+                }*/
 
                 //Login is successfull
                 UserDefaults.standard.set(true, forKey:"isUserLoggedIn");
@@ -40,8 +62,4 @@ class LoginViewController: UIViewController {
                 self.dismiss(animated: true, completion:nil);
             }
         }
-        
-    }
-    
- 
 }
